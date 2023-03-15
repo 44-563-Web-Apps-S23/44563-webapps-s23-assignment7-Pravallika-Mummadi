@@ -41,23 +41,20 @@
 
         <button onclick="get()" type="submit" class="btn btn-info">Get</button>
        <button onclick="delay()" type="submit" class="btn btn-info">delay</button>
-        <button onclick="Promote()" type="submit" class="btn btn-info">Promote</button>
+        <button onclick="Promote()" type="submit" class="btn btn-info">Promote</button> 
 </body>
 <script>
 	function makeNewDiv()
     {
 		/* make the div and its text */
 		let element = document.createElement("div")
-		// element.innerHTML = "an item after 3"
-		// element.style.color = "orange"
         let value= document.getElementById("getInput").value
         element.innerHTML= value
         element.className="delayQ"
 
 		/* add it to the container */
 		let container = document.getElementById('target')
-		container.appendChild(element)
-        
+		container.appendChild(element)   
 		
 	}
     function get() 
@@ -68,23 +65,35 @@
                     queueItems[queueItems.length = 0].remove();
                 }
             }
-
-
-           
-
         function delay()
          {
 			let queueItems = document.getElementsByClassName("delayQ")
-			if (queueItems.length > 1) {
-				removedItem = queueItems[queueItems.length =0]
-				queueItems[queueItems.length =0].remove()
+            if (queueItems.length ==0 || queueItems.length ==1) {
+            }
+			
+            else{
+                removedItem = queueItems[queueItems.length =0]
+			 	queueItems[queueItems.length =0].remove()
+            
 				let container = document.getElementById("target")
-				container.insertBefore(removedItem, container.lastChild)
+				container.append(removedItem, container.firstChild)
 
 			}
+        }
+        function Promote() {
+			let queueItems = document.getElementsByClassName("delayQ")
+			let x = Math.floor(Math.random() * queueItems.length)
+			let y = Math.floor(Math.random() * queueItems.length)
+			 let intialText = document.getElementsByClassName("delayQ")[x]
+			 let finalText = document.getElementsByClassName("delayQ")[y]
+			if (queueItems.length > 1) {
+				let dummy = intialText.innerHTML
+				intialText.innerHTML = finalText.innerHTML
+			 	finalText.innerHTML = dummy
+			}
+		
+		
 		}
-		 
-	
             
 
 </script>

@@ -24,7 +24,7 @@
 
 <p onclick="help()">Click for help</p>
 <p id="help" style="color: brown;background-color:violet;">Help report</p>
-
+<button onclick="random()" type="submit" class="btn btn-info">random</button>
 
 
 
@@ -183,6 +183,24 @@ function help() {
         document.getElementById("penalty").innerHTML = "Penalty is " + penalty
         
     }
+
+    function random() {
+            
+            document.getElementById("bushes").innerHTML = "Number of bushes checked is "+ 0
+            document.getElementById("penalty").innerHTML = "penalty is "+ 0
+            mouseLocation = Math.floor(Math.random() * 24)
+            catLocation = Math.floor(Math.random() * 24)
+            if(cat_location == 13){
+                random()
+            }
+            if(mouseLocation==21)
+            {
+                random()
+            }
+        }
+
+
+
 </script>
 </body>
 </html>

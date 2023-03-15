@@ -24,14 +24,16 @@
             reactTime = Date.now()
             console.log(reactTime)
         }
+        
+
         function startTime() {
-            
-            
-            
-            for (let i = 0; i < 9; i++) {
+            max=10
+            min=2
+            let counter = Math.floor(Math.random() * (max- min +1))+min
+            for (let i = 0; i < counter; i++) {
                 setTimeout(() => {
                     document.getElementById("counter").innerHTML = "count: "+ i
-            }, (8- i) * 1000)}
+                }, (counter-1- i) * 1000)}
                 setTimeout(() => {
                     if (reactTime == undefined) {
                         document.getElementById("target").innerHTML = "Too Slow"
