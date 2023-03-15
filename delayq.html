@@ -41,7 +41,7 @@
 
         <button onclick="get()" type="submit" class="btn btn-info">Get</button>
        <button onclick="delay()" type="submit" class="btn btn-info">delay</button>
-	
+        <button onclick="Promote()" type="submit" class="btn btn-info">Promote</button>
 </body>
 <script>
 	function makeNewDiv()
@@ -83,19 +83,7 @@
 
 			}
 		}
-		 function promote() {
-		let queueItems = document.getElementsByClassName("delayQ")
-			let x = Math.floor(Math.random() * queueItems.length)
-			let y = Math.floor(Math.random() * queueItems.length)
-			 let intialText = document.getElementsByClassName("delayQ")[x]
-			 let finalText = document.getElementsByClassName("delayQ")[y]
-			if (queueItems.length > 1) {
-				let dummy = intialText.innerHTML
-				intialText.innerHTML = finalText.innerHTML
-			 	finalText.innerHTML = dummy
-			}
-		
-		}
+		 
 	
             
 
