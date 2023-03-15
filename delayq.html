@@ -83,19 +83,19 @@
 
 			}
 		}
-		// function swap() {
-		// 	let queueItems = document.getElementsByClassName("delayQ")
-		// 	let x = Math.floor(Math.random() * queueItems.length)
-		// 	let y = Math.floor(Math.random() * queueItems.length)
-		// 	 let intialText = document.getElementsByClassName("delayQ")[x]
-		// 	 let finalText = document.getElementsByClassName("delayQ")[y]
-		// 	if (queueItems.length > 1) {
-		// 		let dummy = intialText.innerHTML
-		// 		intialText.innerHTML = finalText.innerHTML
-		// 	 	finalText.innerHTML = dummy
-		// 	}
+		 function promote() {
+		let queueItems = document.getElementsByClassName("delayQ")
+			let x = Math.floor(Math.random() * queueItems.length)
+			let y = Math.floor(Math.random() * queueItems.length)
+			 let intialText = document.getElementsByClassName("delayQ")[x]
+			 let finalText = document.getElementsByClassName("delayQ")[y]
+			if (queueItems.length > 1) {
+				let dummy = intialText.innerHTML
+				intialText.innerHTML = finalText.innerHTML
+			 	finalText.innerHTML = dummy
+			}
 		
-		//}
+		}
 	
             
 
