@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html> <head>
+    <title>Pravallika Mummadi builds a delaying queue </title> <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style></head>
+
+
+
+<body>
+		<div class="flex-container" id="target">
+		  <div class="delayQ">row item 1</div>   
+		  <div class="delayQ">row item 2</div>  
+		  <div class="delayQ">row item 3</div>  
+		</div>
+        <br>
+        <div class="container-fluid" style="text-align: center;">
+            <label for="getInput" style="font-family:'Times New Roman', Times, serif; color:seagreen; font-size: 20px;">Enter the value </label><br>
+            <input type="text" name="input" id="getInput" value="">
+            <br>
+        </div>
+
+	<p> Press the button to create an new element of type div and then add it to the container.
+		</p>
+		<button onclick="makeNewDiv()">Add value</button>
+
+        <button onclick="get()" type="submit" class="btn btn-info">Get</button>
+       <button onclick="delay()" type="submit" class="btn btn-info">delay</button>
+	
+</body>
+<script>
+	function makeNewDiv()
+    {
+		/* make the div and its text */
+		let element = document.createElement("div")
+		// element.innerHTML = "an item after 3"
+		// element.style.color = "orange"
+        let value= document.getElementById("getInput").value
+        element.innerHTML= value
+        element.className="delayQ"
+
+		/* add it to the container */
+		let container = document.getElementById('target')
+		container.appendChild(element)
+        
+		
+	}
+    function get() 
+            {
+                let queueItems = document.getElementsByClassName("delayQ");
+                
+                if (queueItems.length > 0) {
+                    queueItems[queueItems.length = 0].remove();
+                }
+            }
+
+
+           
+
+        function delay()
+         {
+			let queueItems = document.getElementsByClassName("delayQ")
+			if (queueItems.length > 1) {
+				removedItem = queueItems[queueItems.length =0]
+				queueItems[queueItems.length =0].remove()
+				let container = document.getElementById("target")
+				container.insertBefore(removedItem, container.lastChild)
+
+			}
+		}
+		// function swap() {
+		// 	let queueItems = document.getElementsByClassName("delayQ")
+		// 	let x = Math.floor(Math.random() * queueItems.length)
+		// 	let y = Math.floor(Math.random() * queueItems.length)
+		// 	 let intialText = document.getElementsByClassName("delayQ")[x]
+		// 	 let finalText = document.getElementsByClassName("delayQ")[y]
+		// 	if (queueItems.length > 1) {
+		// 		let dummy = intialText.innerHTML
+		// 		intialText.innerHTML = finalText.innerHTML
+		// 	 	finalText.innerHTML = dummy
+		// 	}
+		
+		//}
+	
+            
+
+</script>
+</html>	
